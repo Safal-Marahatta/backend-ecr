@@ -52,8 +52,8 @@ jobs:
           script: |
             aws ecr get-login-password --region ap-southeast-1 | sudo docker login --username AWS --password-stdin 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com
             sudo docker pull 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/safal-backend:latest
-            sudo docker stop backendend || true
-            sudo docker rm backendend || true
+            sudo docker stop backend || true
+            sudo docker rm backend || true
             sudo docker run -d --name backend -p 3000:80 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/safal-backend:latest
 
 
