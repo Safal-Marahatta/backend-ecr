@@ -53,4 +53,5 @@ jobs:
              docker pull 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/safal-backend:latest
              docker stop backend || true
              docker rm backend || true
-             docker run -d --name backend -p 3001:3001 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/safal-backend:latest
+             docker run -d --name backend --network=host 654654282708.dkr.ecr.ap-southeast-1.amazonaws.com/safal-backend:latest
+             echo "deployment done"
